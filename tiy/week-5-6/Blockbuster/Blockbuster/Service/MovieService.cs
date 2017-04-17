@@ -47,13 +47,13 @@ namespace Blockbuster.Service
                 cmd.Parameters.AddWithValue("@Name", Movie.Name);
                 cmd.Parameters.AddWithValue("@Year", Movie.Year);
                 cmd.Parameters.AddWithValue("@Director", Movie.Director);
-                cmd.Parameters.AddWithValue("@GenreId", Movie.GenreId);
+                cmd.Parameters.AddWithValue("@GenreId", (object)Movie.GenreId ?? DBNull.Value);
                 connection.Open();
                 cmd.ExecuteNonQuery();
                 connection.Close();
             }
             return Movie;
-
         }
+            
     }
 }

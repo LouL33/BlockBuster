@@ -10,6 +10,8 @@ namespace Blockbuster.Controllers
 {
     public class MovieController : Controller
     {
+        MovieService movieService = new MovieService();
+
         // GET: Movie
         public ActionResult Index()
         {
